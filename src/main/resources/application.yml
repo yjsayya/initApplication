@@ -1,0 +1,21 @@
+server:
+  servlet:
+    context-path: /
+
+spring:
+  profiles:
+    active: local
+  main:
+    banner-mode: log
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+      port: 38888
+  thymeleaf:
+    prefix: classpath:templates/
+    check-template-location: true
+    suffix: .html
+    servlet:
+      content-type: text/html
