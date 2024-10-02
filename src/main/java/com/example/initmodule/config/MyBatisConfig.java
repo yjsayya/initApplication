@@ -11,7 +11,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = {"com.cfc.limo.**"}, sqlSessionFactoryRef="sqlSessionFactory")
+@MapperScan(basePackages = {"com.example.initmodule.**"}, sqlSessionFactoryRef="sqlSessionFactory")
 public class MyBatisConfig {
 
     // 여기 basePackages 맞춰주세요
