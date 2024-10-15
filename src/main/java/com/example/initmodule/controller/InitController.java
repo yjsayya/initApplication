@@ -15,11 +15,14 @@ public class InitController {
 
     @GetMapping("/")
     public String index() {
-        log.info("wowowowwo");
+        return "wow";
+    }
+
+    @GetMapping("/yml/config")
+    public String ymlConfig() {
         log.info("yml 파일 잘 읽어올 수 있나? : {}", mtResultCode.getM0000());
         log.info("yml 파일 잘 읽어올 수 있나? : {}", mtResultCode.getM2000());
         return "hi";
     }
-
 
 }

@@ -1,5 +1,8 @@
 server:
   port: 8883
+  servlet:
+    session:
+      timeout: 90m
 
 spring:
   datasource:

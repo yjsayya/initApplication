@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 public enum ExceptionCode {
 
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "User Not Found"),
+    USER_ALREADY_EXISTS(HttpStatus.CONFLICT, "User Already Exists"),
     // POST
     POST_NOT_FOUND(HttpStatus.NOT_FOUND, "Post Not Found"),
     POST_ALREDAY_EXISTS(HttpStatus.CONFLICT, "Post Already Exists"),

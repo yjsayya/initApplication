@@ -1,0 +1,23 @@
+CREATE TABLE USER_ACCOUNT
+(
+    USER_ID    INT PRIMARY KEY AUTO_INCREMENT,
+    EMAIL      VARCHAR(100) NOT NULL,
+    PASSWORD   VARCHAR(200) NOT NULL,
+    USERNAME   VARCHAR(40) NOT NULL,
+    USER_ROLE  VARCHAR(15)  NOT NULL DEFAULT 'ROLE_USER',
+    CREATED_AT DATETIME              DEFAULT NOW() NOT NULL,
+    UPDATED_AT DATETIME,
+    DEL_YN     VARCHAR(1)   NOT NULL DEFAULT 'N'
+);
+
+
+
+SecurityContextHolder.getContext().getAuthentication().getName();
+
+
+Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+Iterator<? extends GrantedAuthority> iter = authorities.iterator();
+GrantedAuthority auth = iter.next();
+String role = auth.getAuthority();

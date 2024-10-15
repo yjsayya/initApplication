@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.initmodule.repository.UserRepository">
+    <!-- namespace 잘 맞춰주셈-->
+    <!-- domain도 잘 맞춰주셈 -->
+    <select id="findByUsername" resultType="com.example.initmodule.domain.entity.UserAccount">
+        <![CDATA[
+            SELECT *
+            FROM USER_ACCOUNT
+            WHERE USERNAME = #{username}
+        ]]>
+    </select>
+
+    <select id="findByEmail" resultType="com.example.initmodule.domain.entity.UserAccount">
+        <![CDATA[
+            SELECT *
+            FROM USER_ACCOUNT
+            WHERE EMAIL = #{email}
+        ]]>
+    </select>
+
+    <insert id="save">
+        <![CDATA[
+            INSERT INTO USER_ACCOUNT (
+                EMAIL,
+                PASSWORD,
+                USERNAME
+            ) VALUES (
+                #{email},
+                #{password},
+                #{username}
+            )
+        ]]>
+    </insert>
+
+    <update id="updateUserInfo">
+        <![CDATA[
+            UPDATE USER_ACCOUNT
+            SET EMAIL = #{email},
+                PASSWORD = #{password},
+                USERNAME = #{username}
+            WHERE USER_ID = #{userId}
+        ]]>
+    </update>
+
+    <update id="deleteUser">
+        <![CDATA[
+            UPDATE USER_ACCOUNT
+            SET DEL_YN = 'Y'
+            WHERE USER_ID = #{userId}
+        ]]>
+    </update>
+
+</mapper>

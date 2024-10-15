@@ -36,7 +36,7 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(ApiResult.error(Integer.parseInt(HttpStatus.INTERNAL_SERVER_ERROR.name()), errorMessage));
+                .body("FAIL");
     }
 
     @ExceptionHandler(CustomException.class)
