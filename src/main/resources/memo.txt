@@ -1,3 +1,10 @@
+1. RestTemplate 설정
+2. MyBatis 설정
+3. yml 파일 읽어오기
+- gradle에 annotationProcessor "org.springframework.boot:spring-boot-configuration-processor" 추가
+- application.yml 파일에 있는 값들을 읽어올 수 있다.
+- 무조건 여기에다가 적도록 강제하는게 코드가 훨씬 간결하고 좋아보인다. ㅇㅋ
+
 CREATE TABLE USER_ACCOUNT
 (
     USER_ID    INT PRIMARY KEY AUTO_INCREMENT,
