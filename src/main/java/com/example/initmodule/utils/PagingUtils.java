@@ -3,17 +3,22 @@ package com.example.initmodule.utils;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.util.Set;
+
 public class PagingUtils {
 
-    public static PagingInfo getPagingInfo(int currentPage_, int pageSize_, long totalRowDataCnt) {
+    private static final int DEFAULT_PAGE_SIZE = 10;
+    private static final Set<Integer> VALID_PAGE_SIZES = Set.of(5, 10, 15, 30, 50);
+    private static final int PAGE_BLOCK_COUNT = 5;
+
+    public static PagingInfo getPagingInfo(int currentPage, int pageSize, long totalRowDataCnt) {
         /** STEP 1 */
-        int pageBlockCnt = 5; // 개발자가 정하면 됨
-        int pageSize = checkPageSizeValidation(pageSize_);
+        pageSize = checkPageSizeValidation(pageSize);
         int totalPageBlockCnt = calTotalPageBlockCnt(totalRowDataCnt, pageSize);
-        int currentPage = checkCurrentPageValidation(currentPage_, totalPageBlockCnt);
+        currentPage = checkCurrentPageValidation(currentPage, totalPageBlockCnt);
         /** STEP 2 */
-        int endPageBlock = calEndPageBlock(currentPage, pageBlockCnt);
-        int startPageBlock = calStartPageBlock(endPageBlock, pageBlockCnt);
+        int endPageBlock = calEndPageBlock(currentPage, PAGE_BLOCK_COUNT);
+        int startPageBlock = calStartPageBlock(endPageBlock, PAGE_BLOCK_COUNT);
         // 유효성 검사를 더 늦게 해줘야 함
         endPageBlock = checkEndPageBlockValidation(endPageBlock, totalPageBlockCnt);
         boolean next = (currentPage != totalPageBlockCnt);
@@ -22,7 +27,7 @@ public class PagingUtils {
         boolean prev = (currentPage != 1);
         /** STEP 3 */
         int startRowDataNum = (currentPage-1) * pageSize + 1;
-        int endRowDataNum = startRowDataNum + pageSize -1;
+        int endRowDataNum = startRowDataNum + pageSize - 1;
 
         int offSet = (currentPage-1) * pageSize;
 
@@ -41,13 +46,23 @@ public class PagingUtils {
                 .build();
     }
 
+    /** pageSize 유효성 검사 */
     private static int checkPageSizeValidation(int pageSize) {
-        if (pageSize == 5 || pageSize == 10 || pageSize == 30 || pageSize == 50) {
+        if (VALID_PAGE_SIZES.contains(pageSize)) {
             return pageSize;
         }
-        return 10;
+        return DEFAULT_PAGE_SIZE;
     }
 
+    /** totalPageBlockCnt 계산하기 */
+    private static int calTotalPageBlockCnt(long totalRowDataCnt, int pageSize) {
+        if (totalRowDataCnt == 0) {
+            return 1;
+        }
+        return (int)(totalRowDataCnt + pageSize - 1) / pageSize;
+    }
+
+    /** currentPage 유효성 검사 */
     private static int checkCurrentPageValidation(int currentPage, int totalPageBlockCnt) {
         if (currentPage > totalPageBlockCnt)
             currentPage = totalPageBlockCnt;
@@ -57,25 +72,22 @@ public class PagingUtils {
         return currentPage;
     }
 
-    private static int calTotalPageBlockCnt(long totalRowDataCnt, int pageSize) {
-        if (totalRowDataCnt == 0) {
-            return 1;
-        }
-        return (int)(totalRowDataCnt + pageSize - 1) / pageSize;
-    }
-
+    /** endPageBlock 계산하기 */
     private static int calEndPageBlock(int currentPage, int pageBlockCnt) {
         return ((currentPage + pageBlockCnt - 1) / pageBlockCnt) * pageBlockCnt;
     }
 
+    /** endPageBlock 유효성 검사 */
     private static int checkEndPageBlockValidation(int endPageBlock, int totalPageBlockCnt) {
         return Math.min(endPageBlock, totalPageBlockCnt);
     }
 
+    /** startPageBlock 계산하기 */
     private static int calStartPageBlock(int endPageBlock, int pageBlockCnt) {
         return endPageBlock - pageBlockCnt + 1;
     }
 
+    /** startPageBlock 유효성 검사 */
     private static int checkStartPageBlockValidation(int startPageBlock) {
         return Math.max(startPageBlock, 1);
     }
