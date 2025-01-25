@@ -1,3 +1,8 @@
+0. gitignore 파일 설정
+    ㄴ macOS / Windows
+    ㄴ intellij+all / Eclipse / VisualStudioCode
+    ㄴ Java / Gradle / Maven
+    ㄴ NetBeans
 1. logback-spring.xml 파일 설정
 2. application.yml 파일 설정
 3. run.sh 파일
