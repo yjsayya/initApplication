@@ -22,3 +22,9 @@ spring:
 logging:
   level:
     root: INFO
+
+example:
+  wow:
+    name: "wow"
+    age: "10"
+    address: "seaul"
