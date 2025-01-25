@@ -27,9 +27,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests((auth) -> auth
-                .antMatchers("/", "/login", "/api/login", "/join").permitAll()
-                .antMatchers("/admin").hasRole("ROLE_ADMIN")
-                .antMatchers("/my/**").hasAnyRole("ROLE_ADMIN", "ROLE_USER")
+                .antMatchers("/", "/login", "/api/login", "/join", "/api/yml").permitAll()
+                .antMatchers("/admin").hasRole("ADMIN")
+                .antMatchers("/my/**").hasAnyRole("ADMIN", "USER")
                 .anyRequest().authenticated()
         );
         http.formLogin((auth) -> auth.loginPage("/login")
