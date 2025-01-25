@@ -1,4 +1,4 @@
-package com.example.initmodule.etc.code;
+package com.example.initmodule.common.properties;
 
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.core.env.PropertiesPropertySource;

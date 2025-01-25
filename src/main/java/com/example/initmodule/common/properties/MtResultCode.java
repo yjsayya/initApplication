@@ -1,4 +1,4 @@
-package com.example.initmodule.etc.code;
+package com.example.initmodule.common.properties;
 
 import lombok.Getter;
 import lombok.Setter;

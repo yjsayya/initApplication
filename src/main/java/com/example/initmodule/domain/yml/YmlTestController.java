@@ -2,7 +2,7 @@ package com.example.initmodule.domain.yml;
 
 import com.example.initmodule.common.properties.ImcProperties;
 import com.example.initmodule.common.response.ApiResponse;
-import com.example.initmodule.etc.code.MtResultCode;
+import com.example.initmodule.common.properties.MtResultCode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
