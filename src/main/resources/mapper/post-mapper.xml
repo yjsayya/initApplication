@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.initmodule.repository.PostRepository">
+<mapper namespace="com.example.initmodule.domain.post.repository.PostRepository">
     <!-- namespace 잘 맞춰주셈-->
     <!-- domain도 잘 맞춰주셈 -->
-    <select id="findAll" resultType="com.example.initmodule.domain.entity.Post">
+    <select id="findAll" resultType="com.example.initmodule.domain.post.entity.Post">
        SELECT *
        FROM POST
        WHERE TITLE = #{post.title}
@@ -18,13 +18,13 @@
         WHERE TITLE = #{post.title}
     </select>
 
-    <select id="findById" parameterType="Long" resultType="com.example.initmodule.domain.entity.Post">
+    <select id="findById" parameterType="Long" resultType="com.example.initmodule.domain.post.entity.Post">
         SELECT *
         FROM POST
         WHERE POST_ID = #{postId}
     </select>
 
-    <insert id="savePost" parameterType="com.example.initmodule.domain.entity.Post">
+    <insert id="savePost" parameterType="com.example.initmodule.domain.post.entity.Post">
         INSERT INTO POST (
             TITLE,
             CONTENT
@@ -34,7 +34,7 @@
         )
     </insert>
 
-    <update id="updatePost" parameterType="com.example.initmodule.domain.entity.Post">
+    <update id="updatePost" parameterType="com.example.initmodule.domain.post.entity.Post">
         UPDATE POST
         SET TITLE = #{title},
             CONTENT = #{content}

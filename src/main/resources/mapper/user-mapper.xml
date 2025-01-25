@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.initmodule.repository.UserRepository">
+<mapper namespace="com.example.initmodule.domain.users.repository.UserRepository">
     <!-- namespace 잘 맞춰주셈-->
     <!-- domain도 잘 맞춰주셈 -->
-    <select id="findByUsername" resultType="com.example.initmodule.domain.entity.UserAccount">
+    <select id="findByUsername" resultType="com.example.initmodule.domain.users.entity.UserAccount">
         <![CDATA[
             SELECT *
             FROM USER_ACCOUNT
@@ -11,7 +11,7 @@
         ]]>
     </select>
 
-    <select id="findByEmail" resultType="com.example.initmodule.domain.entity.UserAccount">
+    <select id="findByEmail" resultType="com.example.initmodule.domain.users.entity.UserAccount">
         <![CDATA[
             SELECT *
             FROM USER_ACCOUNT

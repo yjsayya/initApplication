@@ -10,21 +10,11 @@ spring:
     username: root
     password: 1234
     driver-class-name: org.mariadb.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: none # 주의!
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MariaDBDialect
-        format_sql: true
-        show_sql: false
 
-logging:
-  level:
-    root: INFO
-
-example:
-  wow:
-    name: "wow"
-    age: "10"
-    address: "seaul"
+imc:
+  mt:
+    sms: sms-property-local
+    lms: lms-property-local
+    mms: mms-property-local
+  ft: friendtalk-local
+  at: alimtalk-local
