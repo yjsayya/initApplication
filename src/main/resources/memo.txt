@@ -4,21 +4,16 @@
     ㄴ Java / Gradle / Maven
     ㄴ NetBeans
 1. logback-spring.xml 파일 설정
-2. application.yml 파일 설정
+2. application.yml 파일 설정(local, dev, prod)
 3. run.sh 파일
 4. (v) MyBatis 설정
 5. (v) Spring Security 설정
 6. Response 및 GlobalErrorHandling 설정
-7. Properties값
+7. Properties값(yml 파일 읽기)
     ㄴ application.yml파일
     ㄴ (v) 외부 yml 파일
 8. (v) RestTemplate 설정
 
-
-
-3. yml 파일 읽어오기
-- gradle에 annotationProcessor "org.springframework.boot:spring-boot-configuration-processor" 추가
-- application.yml 파일에 있는 값들을 읽어올 수 있다.
 
 CREATE TABLE USER_ACCOUNT
 (
