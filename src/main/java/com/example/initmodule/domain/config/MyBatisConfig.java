@@ -1,4 +1,4 @@
-package com.example.initmodule.config;
+package com.example.initmodule.domain.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;

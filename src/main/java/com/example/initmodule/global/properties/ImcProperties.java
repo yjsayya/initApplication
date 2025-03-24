@@ -1,4 +1,4 @@
-package com.example.initmodule.common.properties;
+package com.example.initmodule.global.properties;
 
 import lombok.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;

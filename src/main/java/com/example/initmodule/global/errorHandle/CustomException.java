@@ -1,4 +1,4 @@
-package com.example.initmodule.common.errorHandle;
+package com.example.initmodule.global.errorHandle;
 
 import lombok.Getter;
 

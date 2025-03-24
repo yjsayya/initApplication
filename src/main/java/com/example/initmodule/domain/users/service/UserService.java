@@ -1,7 +1,7 @@
 package com.example.initmodule.domain.users.service;
 
-import com.example.initmodule.common.errorHandle.CustomException;
-import com.example.initmodule.common.errorHandle.ExceptionCode;
+import com.example.initmodule.global.errorHandle.CustomException;
+import com.example.initmodule.global.errorHandle.ExceptionCode;
 import com.example.initmodule.domain.users.controller.request.UserJoinRequest;
 import com.example.initmodule.domain.users.entity.UserDetailsImpl;
 import com.example.initmodule.domain.users.entity.UserAccount;

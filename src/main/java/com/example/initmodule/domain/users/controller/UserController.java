@@ -1,6 +1,6 @@
 package com.example.initmodule.domain.users.controller;
 
-import com.example.initmodule.common.response.ApiResponse;
+import com.example.initmodule.global.response.ApiResponse;
 import com.example.initmodule.domain.users.controller.request.UserJoinRequest;
 import com.example.initmodule.domain.users.service.UserService;
 import lombok.RequiredArgsConstructor;

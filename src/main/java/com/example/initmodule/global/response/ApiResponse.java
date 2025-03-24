@@ -1,4 +1,4 @@
-package com.example.initmodule.common.response;
+package com.example.initmodule.global.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

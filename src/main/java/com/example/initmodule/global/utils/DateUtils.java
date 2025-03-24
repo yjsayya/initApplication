@@ -1,4 +1,4 @@
-package com.example.initmodule.utils;
+package com.example.initmodule.global.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

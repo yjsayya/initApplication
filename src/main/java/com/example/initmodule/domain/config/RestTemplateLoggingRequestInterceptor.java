@@ -1,4 +1,4 @@
-package com.example.initmodule.config;
+package com.example.initmodule.domain.config;
 
 import java.io.IOException;
 import java.net.URI;

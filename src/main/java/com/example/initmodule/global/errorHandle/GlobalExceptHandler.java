@@ -1,6 +1,6 @@
-package com.example.initmodule.common.errorHandle;
+package com.example.initmodule.global.errorHandle;
 
-import com.example.initmodule.common.response.ApiResponse;
+import com.example.initmodule.global.response.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

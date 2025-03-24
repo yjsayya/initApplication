@@ -1,7 +1,7 @@
 package com.example.initmodule.domain.post.controller.response;
 
 import com.example.initmodule.domain.post.entity.Post;
-import com.example.initmodule.utils.PagingUtils;
+import com.example.initmodule.global.utils.PagingUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

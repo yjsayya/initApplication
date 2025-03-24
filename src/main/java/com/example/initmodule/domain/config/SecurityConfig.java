@@ -1,9 +1,9 @@
-package com.example.initmodule.config;
+package com.example.initmodule.domain.config;
 
-import com.example.initmodule.common.security.CustomAuthenticationFilter;
-import com.example.initmodule.common.security.LoginFailHandlerImpl;
-import com.example.initmodule.common.security.LoginSuccessHandlerImpl;
-import com.example.initmodule.common.security.LogoutHandlerImpl;
+import com.example.initmodule.global.security.CustomAuthenticationFilter;
+import com.example.initmodule.global.security.LoginFailHandlerImpl;
+import com.example.initmodule.global.security.LoginSuccessHandlerImpl;
+import com.example.initmodule.global.security.LogoutHandlerImpl;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
